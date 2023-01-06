@@ -1,8 +1,7 @@
 import { GraphQLWsLink } from '@apollo/client/link/subscriptions';
 import { getMainDefinition } from '@apollo/client/utilities';
 import { createClient } from 'graphql-ws';
-import { ApolloClient, InMemoryCache, split, HttpLink, setLogVerbosity } from '@apollo/client';
-import { useEffect } from 'react/cjs/react.production.min';
+import { ApolloClient, InMemoryCache, split, HttpLink } from '@apollo/client';
 
 const uri = '127.0.0.1/graphql'
 const httpLink = new HttpLink({
