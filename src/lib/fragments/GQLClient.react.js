@@ -16,20 +16,20 @@ import { createClient } from 'graphql-ws';
  * which is editable by the user.
  */
 export default class GqlClient extends Component {
-
+    handleChange = ({ data, loading, error }) => {
+        if (loading) {
+            this.props.setProps({ loading: loading });
+        }
+        if (error) {
+            this.props.setProps({ error: JSON.stringify(error) });
+        }
+        this.props.setProps({ data: data });
+        //console.log(data);
+    }
     render() {
         const { id, query, setProps, uri } = this.props;
 
-        const handleChange = ({ data, loading, error }) => {
-            if (loading) {
-                setProps({ loading: loading });
-            }
-            if (error) {
-                setProps({ error: JSON.stringify(error) });
-            }
-            setProps({ data: data });
-            console.log(data);
-        }
+
 
         const httpLink = new HttpLink({
 
@@ -69,11 +69,10 @@ export default class GqlClient extends Component {
 
         const client = apolloClient
         client.setLink(splitLink);
-
         return (
             <div id={id}>
                 <ApolloProvider client={client}>
-                    <NewSubscription query={query} onChange={handleChange} />
+                    <NewSubscription query={query} onChange={this.handleChange} />
                 </ApolloProvider>
             </div >
         );

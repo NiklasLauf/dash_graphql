@@ -10,6 +10,7 @@ import { GQLClient as RealComponent } from '../LazyLoader';
  * which is editable by the user.
  */
 export default class GQLClient extends Component {
+
     render() {
         return (
             <React.Suspense fallback={null}>
