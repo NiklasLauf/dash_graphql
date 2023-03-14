@@ -29,7 +29,7 @@ export default class GqlClient extends Component {
     render() {
         const { id, query, setProps, uri } = this.props;
 
-        const linkUri = 'http://'.concat(uri);
+        var linkUri = 'http://'.concat(uri);
         if (window.location.protocol === 'https:') {
             linkUri = 'https://'.concat(uri);
         }
@@ -40,7 +40,7 @@ export default class GqlClient extends Component {
 
         });
 
-        const wsLinkUrl = 'ws://'.concat(uri);
+        var wsLinkUrl = 'ws://'.concat(uri);
         if (window.location.protocol === 'https:') {
             wsLinkUrl = 'wss://'.concat(uri);
         }

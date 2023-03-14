@@ -22,7 +22,7 @@ app.layout = html.Div(
                         data
                         }
                     }""",
-            uri="student08/graphql",
+            uri="cpt-machine-data.psi.ch/graphql",
         ),
         html.Div(id="output_subscription"),
         html.Div(id="query_container"),
