@@ -29,18 +29,24 @@ export default class GqlClient extends Component {
     render() {
         const { id, query, setProps, uri } = this.props;
 
-
+        const linkUri = 'http://'.concat(uri);
+        if (window.location.protocol === 'https:') {
+            linkUri = 'https://'.concat(uri);
+        }
 
         const httpLink = new HttpLink({
 
-            uri: 'http://'.concat(uri)
+            uri: linkUri
 
         });
 
-
+        const wsLinkUrl = 'ws://'.concat(uri);
+        if (window.location.protocol === 'https:') {
+            wsLinkUrl = 'wss://'.concat(uri);
+        }
         const wsLink = new GraphQLWsLink(createClient({
 
-            url: 'ws://'.concat(uri)
+            url: wsLinkUrl
 
         }));
         const splitLink = split(

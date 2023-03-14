@@ -2,7 +2,7 @@
 name = "DashGqlClient"
 uuid = "1b08a953-4be3-4667-9a23-8381690d0f32"
 authors = ["Niklas Laufkoetter <niklas@laufkoetter.info>"]
-version = "0.0.1"
+version = "0.0.3"
 
 [deps]
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"

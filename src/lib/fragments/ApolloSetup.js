@@ -6,14 +6,14 @@ import { ApolloClient, InMemoryCache, split, HttpLink } from '@apollo/client';
 const uri = '127.0.0.1/graphql'
 const httpLink = new HttpLink({
 
-    uri: 'http://'.concat(uri)
+    uri: 'https://'.concat(uri)
 
 });
 
 
 const wsLink = new GraphQLWsLink(createClient({
 
-    url: 'ws://'.concat(uri)
+    url: 'wss://'.concat(uri)
 
 }));
 const splitLink = split(

@@ -1,6 +1,6 @@
 {
   "name": "dash_gql_client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple GraphQL Client wrapped as a Dash Component",
   "main": "build/index.js",
   "scripts": {
